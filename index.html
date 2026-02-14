@@ -344,7 +344,7 @@
                         <div>
                             <label for="recipe-input" class="block text-xs font-bold uppercase tracking-widest text-ed-olive mb-2">What's in your pantry?</label>
                             <div class="flex flex-col md:flex-row gap-4">
-                                <input type="text" id="recipe-input" placeholder="e.g. I have spinach and cheese..." 
+                                <input type="text" id="recipe-input" placeholder="e.g. I have spinach and cheese, suggest a breakfast dish." 
                                        class="flex-grow bg-ed-bg border-b-2 border-ed-olive/30 p-4 focus:outline-none focus:border-ed-olive transition placeholder-ed-olive/40 font-sans text-ed-dark">
                                 <button onclick="generateRecipe()" id="generate-btn" class="px-8 py-4 bg-ed-olive text-white font-bold uppercase tracking-widest hover:bg-ed-dark transition whitespace-nowrap flex items-center justify-center gap-2">
                                     <span>Generate Recipe</span>
@@ -352,6 +352,8 @@
                                 </button>
                             </div>
                         </div>
+
+                        <!-- Result Area -->
                         <div id="recipe-result" class="hidden mt-8 pt-8 border-t border-ed-olive/10">
                             <div id="loading-spinner" class="hidden flex justify-center py-8">
                                 <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-ed-olive"></div>
@@ -359,11 +361,181 @@
                             <div id="ai-content" class="prose max-w-none text-ed-dark/80 font-light leading-relaxed"></div>
                         </div>
                     </div>
+                    
+                    <!-- Decorative Background Icon -->
+                    <svg class="absolute -right-12 -bottom-12 w-64 h-64 text-ed-olive/5 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
                 </div>
             </div>
         </section>
 
-        <!-- Contact / Footer (Direct Email Trigger) -->
+        <!-- Locations & Network Section -->
+        <section id="locations" class="py-24 px-6 lg:px-20 bg-white border-b border-ed-olive/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-4xl md:text-5xl text-ed-olive mb-6">Our Network</h2>
+                    <p class="text-ed-dark/70 text-lg font-light max-w-2xl mx-auto">
+                        Located in the heart of Rajasthan's wheat belt, serving premium flour to partners across the region.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- 1. Firm's Location (Embedded Google Map) -->
+                    <div class="bg-ed-bg p-2 border border-ed-olive/10 shadow-lg">
+                        <div class="h-full min-h-[400px] w-full relative">
+                            <!-- Embedded Map for RIICO Industrial Area, Baran -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14378.167332243213!2d76.513!3d25.101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396f849000000001%3A0x0!2sRIICO%20Industrial%20Area%2C%20Baran!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0; filter: grayscale(0.2);" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="absolute inset-0 w-full h-full">
+                            </iframe>
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 border-l-4 border-ed-olive shadow-md">
+                                <p class="text-xs font-bold uppercase tracking-widest text-ed-olive">Headquarters</p>
+                                <p class="font-display text-lg text-ed-dark">Mehta Industries</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Delivery/Retail Locations List -->
+                    <div class="flex flex-col">
+                        <!-- Header -->
+                        <div class="bg-ed-olive text-white px-8 py-6 flex justify-between items-center rounded-t-sm">
+                            <h3 class="font-display text-2xl">Retail Partners</h3>
+                            <span class="text-xs font-bold uppercase tracking-widest opacity-70">Find Stock</span>
+                        </div>
+                        
+                        <!-- SCROLLABLE LIST CONTAINER
+                             - h-[400px]: Sets a fixed height window (same as map)
+                             - overflow-y-auto: Enables scrolling inside this window
+                             - bg-ed-bg: Ensures the background is the 'Warm Sand' theme color
+                        -->
+                        <div class="border-l border-r border-b border-ed-olive/10 bg-ed-bg h-[400px] overflow-y-auto">
+                            
+                            <!-- ==================================================================================
+                                 INSTRUCTIONS:
+                                 Paste new shop blocks INSIDE this scrollable container.
+                            ================================================================================== -->
+
+                            <!-- SHOP START: Partner 1 -->
+                            <div class="p-6 border-b border-ed-olive/10 hover:bg-white transition duration-300 group">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <!-- Shop Name -->
+                                        <h4 class="font-bold text-ed-dark group-hover:text-ed-olive transition">Yashaswi Traders</h4>
+                                        <!-- Address -->
+                                        <p class="text-sm text-ed-dark/60 mt-1">Juna Mondha, Chhatrapati Sambhajinagar</p>
+                                    </div>
+                                    
+                                    <a href="https://www.google.com/maps/search/?api=1&query=yashaswi+traders+chhatrapati sambhajinagar" target="_blank" class="p-2 bg-white border border-ed-olive/10 rounded-full text-ed-olive hover:bg-ed-olive hover:text-white transition shadow-sm" title="View Location">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SHOP END -->
+
+                            <!-- SHOP START: Partner 2 -->
+                            <div class="p-6 border-b border-ed-olive/10 hover:bg-white transition duration-300 group">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-ed-dark group-hover:text-ed-olive transition">Shree Krishna Mart</h4>
+                                        <p class="text-sm text-ed-dark/60 mt-1">Station Road, Kota</p>
+                                    </div>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Shree+Krishna+Mart+Kota" target="_blank" class="p-2 bg-white border border-ed-olive/10 rounded-full text-ed-olive hover:bg-ed-olive hover:text-white transition shadow-sm" title="View Location">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SHOP END -->
+
+                            <!-- SHOP START: Partner 3 -->
+                            <div class="p-6 border-b border-ed-olive/10 hover:bg-white transition duration-300 group">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-ed-dark group-hover:text-ed-olive transition">Sharma General Store</h4>
+                                        <p class="text-sm text-ed-dark/60 mt-1">Main Market, Baran</p>
+                                    </div>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Sharma+General+Store+Baran" target="_blank" class="p-2 bg-white border border-ed-olive/10 rounded-full text-ed-olive hover:bg-ed-olive hover:text-white transition shadow-sm" title="View Location">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SHOP END -->
+
+                             <!-- SHOP START: Partner 4 -->
+                             <div class="p-6 border-b border-ed-olive/10 hover:bg-white transition duration-300 group">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-ed-dark group-hover:text-ed-olive transition">Jhalawar Supermarket</h4>
+                                        <p class="text-sm text-ed-dark/60 mt-1">Near Bus Stand, Jhalawar</p>
+                                    </div>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Jhalawar+Supermarket" target="_blank" class="p-2 bg-white border border-ed-olive/10 rounded-full text-ed-olive hover:bg-ed-olive hover:text-white transition shadow-sm" title="View Location">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SHOP END -->
+                            
+                            <!-- SHOP START: Partner 4 -->
+                             <div class="p-6 border-b border-ed-olive/10 hover:bg-white transition duration-300 group">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-ed-dark group-hover:text-ed-olive transition">Jhalawar Supermarket</h4>
+                                        <p class="text-sm text-ed-dark/60 mt-1">Near Bus Stand, Jhalawar</p>
+                                    </div>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Jhalawar+Supermarket" target="_blank" class="p-2 bg-white border border-ed-olive/10 rounded-full text-ed-olive hover:bg-ed-olive hover:text-white transition shadow-sm" title="View Location">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SHOP END -->
+
+                            <!-- SHOP START: Partner 4 -->
+                             <div class="p-6 border-b border-ed-olive/10 hover:bg-white transition duration-300 group">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-ed-dark group-hover:text-ed-olive transition">Jhalawar Supermarket</h4>
+                                        <p class="text-sm text-ed-dark/60 mt-1">Near Bus Stand, Jhalawar</p>
+                                    </div>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Jhalawar+Supermarket" target="_blank" class="p-2 bg-white border border-ed-olive/10 rounded-full text-ed-olive hover:bg-ed-olive hover:text-white transition shadow-sm" title="View Location">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SHOP END -->
+
+                            <!-- SHOP START: Partner 4 -->
+                             <div class="p-6 border-b border-ed-olive/10 hover:bg-white transition duration-300 group">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-ed-dark group-hover:text-ed-olive transition">Jhalawar Supermarket</h4>
+                                        <p class="text-sm text-ed-dark/60 mt-1">Near Bus Stand, Jhalawar</p>
+                                    </div>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Jhalawar+Supermarket" target="_blank" class="p-2 bg-white border border-ed-olive/10 rounded-full text-ed-olive hover:bg-ed-olive hover:text-white transition shadow-sm" title="View Location">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SHOP END -->
+
+                            
+                        </div>
+                        
+                        <!-- Footer of List -->
+                        <div class="bg-ed-olive/5 p-4 text-center border-l border-r border-b border-ed-olive/10 cursor-pointer hover:bg-ed-olive/10 transition" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                            <span class="text-xs font-bold uppercase tracking-widest text-ed-olive">Become a Partner →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Footer -->
         <section id="contact" class="py-16 md:py-24 px-4 md:px-6 lg:px-20 bg-ed-bg">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12 md:mb-16">
@@ -443,7 +615,7 @@
     </main>
 
     <script>
-        const apiKey = "AIzaSyB1BfEiz5ghBaR9lEK7CNvxR50xMWMpQ_c";
+        const apiKey = ""; // Add your API Key here
 
         async function generateRecipe() {
             const input = document.getElementById('recipe-input').value;
@@ -505,5 +677,4 @@
         }
     </script>
 </body>
-
 </html>
