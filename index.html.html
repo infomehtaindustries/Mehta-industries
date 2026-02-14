@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehta Industries | The Pure Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.0.0/dist/markdown-it.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ed: {
+                            bg: '#f0efe9', // Warm Sand
+                            dark: '#1a1a1a', // Soft Black
+                            olive: '#3f4a3c', // Deep Olive
+                            sage: '#8a9a88',
+                            wheat: '#dcb886',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Tenor Sans', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'paper': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f0efe9;
+            color: #1a1a1a;
+            font-family: 'Outfit', sans-serif;
+        }
+        .font-display {
+            font-family: 'Tenor Sans', sans-serif;
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        .reveal-img {
+            clip-path: inset(0 0 0 0);
+            transition: clip-path 1s ease;
+        }
+        .reveal-img:hover {
+            clip-path: inset(10px 10px 10px 10px);
+        }
+        /* Markdown Styles for AI Response */
+        .prose h3 { font-family: 'Tenor Sans', sans-serif; font-size: 1.5rem; margin-bottom: 1rem; color: #3f4a3c; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { font-weight: 600; color: #3f4a3c; }
+    </style>
+</head>
+<body class="selection:bg-ed-olive selection:text-white overflow-x-hidden">
+
+    <!-- Vertical Side Nav (Desktop) -->
+    <div class="hidden lg:flex fixed left-0 top-0 h-full w-24 border-r border-ed-olive/10 flex-col justify-between items-center py-6 z-50 bg-ed-bg">
+        <!-- New Logo: Strong Typography + Solid Wheat Icon -->
+        <div class="w-full px-1 flex flex-col items-center group cursor-pointer">
+            <!-- Wheat Icon -->
+            <svg viewBox="0 0 24 24" class="w-10 h-10 text-ed-olive mb-2 transition-transform group-hover:-translate-y-1" fill="currentColor">
+                <path d="M12 2C12 2 13 6 11.5 9C10 12 7 12 7 12C7 12 9 11 10.5 8C12 5 12 2 12 2Z" opacity="0.8"/>
+                <path d="M12 2C12 2 11 6 12.5 9C14 12 17 12 17 12C17 12 15 11 13.5 8C12 5 12 2 12 2Z" opacity="0.8"/>
+                <path d="M12 8C12 8 13 12 11.5 15C10 18 7 18 7 18C7 18 9 17 10.5 14C12 11 12 8 12 8Z"/>
+                <path d="M12 8C12 8 11 12 12.5 15C14 18 17 18 17 18C17 18 15 17 13.5 14C12 11 12 8 12 8Z"/>
+                <path d="M12 14C12 14 13 18 11.5 21C10 24 7 24 7 24C7 24 9 23 10.5 20C12 17 12 14 12 14Z" opacity="0.8"/>
+                <path d="M12 14C12 14 11 18 12.5 21C14 24 17 24 17 24C17 24 15 23 13.5 20C12 17 12 14 12 14Z" opacity="0.8"/>
+                <rect x="11.5" y="10" width="1" height="14" rx="0.5"/>
+            </svg>
+            
+            <div class="text-center">
+                <!-- Bold Serif Name -->
+                <span class="block font-display font-bold text-xl text-ed-olive leading-none tracking-widest">MEHTA</span>
+                <!-- Sans Serif Subtitle -->
+                <span class="block font-sans text-[0.55rem] font-bold tracking-[0.2em] text-ed-olive/70 mt-1">INDUSTRIES</span>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-8">
+            <div class="w-1 h-1 bg-ed-olive rounded-full"></div>
+            <div class="w-1 h-1 bg-ed-olive rounded-full"></div>
+            <div class="w-1 h-1 bg-ed-olive rounded-full"></div>
+        </div>
+        
+        <div class="font-bold tracking-widest text-xs rotate-180 vertical-text text-ed-olive/60">EST. 2024</div>
+    </div>
+
+    <!-- Mobile/Tablet Nav -->
+    <nav class="lg:pl-24 fixed w-full top-0 z-40 bg-ed-bg/95 backdrop-blur-md border-b border-ed-olive/10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex justify-between items-center">
+            <!-- Mobile Vector Logo (Horizontal Layout) -->
+            <div class="flex items-center gap-3 lg:hidden">
+                <svg viewBox="0 0 24 24" class="w-8 h-8 text-ed-olive" fill="currentColor">
+                    <path d="M12 2C12 2 13 6 11.5 9C10 12 7 12 7 12C7 12 9 11 10.5 8C12 5 12 2 12 2Z"/>
+                    <path d="M12 2C12 2 11 6 12.5 9C14 12 17 12 17 12C17 12 15 11 13.5 8C12 5 12 2 12 2Z"/>
+                    <path d="M12 8C12 8 13 12 11.5 15C10 18 7 18 7 18C7 18 9 17 10.5 14C12 11 12 8 12 8Z"/>
+                    <path d="M12 8C12 8 11 12 12.5 15C14 18 17 18 17 18C17 18 15 17 13.5 14C12 11 12 8 12 8Z"/>
+                    <rect x="11.5" y="10" width="1" height="14" rx="0.5"/>
+                </svg>
+                <div class="flex flex-col justify-center">
+                    <span class="block font-display font-bold text-lg text-ed-olive leading-none tracking-wide">MEHTA</span>
+                    <span class="block font-sans text-[0.5rem] font-bold tracking-[0.25em] text-ed-olive/70">INDUSTRIES</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:block text-xs font-bold tracking-[0.2em] text-ed-olive uppercase">
+                Riico Industrial Area, Baran
+            </div>
+            <!-- Mobile Links -->
+            <div class="flex gap-4 md:gap-8 text-xs md:text-sm font-medium">
+                <a href="#journal" class="hover:text-ed-wheat transition">Journal</a>
+                <a href="#kitchen" class="hover:text-ed-wheat transition text-ed-olive font-bold">AI Kitchen</a>
+                <a href="#contact" class="hover:text-ed-wheat transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="lg:pl-24 pt-20">
+        
+        <!-- Hero Section -->
+        <header class="min-h-[85vh] flex flex-col justify-center px-4 md:px-6 lg:px-20 relative overflow-hidden">
+            <div class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12 lg:py-0">
+                <div class="order-2 lg:order-1 relative z-10 text-center lg:text-left">
+                    <span class="text-ed-olive text-xs font-bold tracking-[0.3em] uppercase block mb-4">The Purity Edit</span>
+                    <h1 class="font-display text-5xl md:text-6xl lg:text-8xl leading-[0.9] text-ed-olive mb-6 lg:mb-8">
+                        Unrefined<br>
+                        <span class="italic text-ed-wheat">Intention.</span>
+                    </h1>
+                    <p class="text-ed-dark/70 text-base md:text-lg max-w-md mx-auto lg:mx-0 leading-relaxed mb-8 lg:mb-10">
+                        We don't manufacture flour. We cultivate health. Sourced from the mineral-rich soils of Hadoti and optically sorted for absolute purity.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#health" class="px-8 py-3 bg-ed-olive text-white text-sm tracking-widest uppercase hover:bg-ed-dark transition text-center">
+                            Read The Truth
+                        </a>
+                        <a href="#kitchen" class="px-8 py-3 border border-ed-olive text-ed-olive text-sm tracking-widest uppercase hover:bg-ed-olive hover:text-white transition text-center">
+                            Get Recipes
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 relative px-4 lg:px-0">
+                    <div class="aspect-[3/4] rounded-t-[100px] overflow-hidden relative bg-ed-olive/10 shadow-xl">
+                        <!-- Hero Image: Scenic Wheat Field -->
+                        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2041&auto=format&fit=crop" 
+                             alt="Golden Wheat Field" 
+                             class="w-full h-full object-cover reveal-img"
+                             onerror="this.style.display='none'; this.parentElement.classList.add('bg-ed-wheat')">
+                        <!-- Sticker Badge -->
+                        <div class="absolute bottom-8 left-8 w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
+                            <svg class="w-16 h-16 md:w-20 md:h-20 text-ed-olive" viewBox="0 0 100 100">
+                                <path id="curve" d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0" fill="transparent"/>
+                                <text width="500">
+                                    <textPath xlink:href="#curve" class="text-[10px] font-bold uppercase tracking-widest fill-current">
+                                        • Buhler Swiss Technology • 100% Pure •
+                                    </textPath>
+                                </text>
+                            </svg>
+                            <div class="absolute text-lg md:text-xl font-display font-bold">99%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Origin Story -->
+        <section id="origin" class="py-16 md:py-24 px-4 md:px-6 lg:px-20 border-b border-ed-olive/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+                    <div class="lg:col-span-5">
+                         <span class="text-ed-olive text-xs font-bold tracking-[0.3em] uppercase block mb-4">Provenance</span>
+                         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-ed-dark mb-6">Roots in Hadoti</h2>
+                         <p class="text-ed-dark/70 text-lg leading-relaxed mb-8">
+                             The southeastern region of Rajasthan is known for its black clay soil and dry climate. This unique terroir produces a wheat berry that is naturally lower in moisture and higher in protein structure than the northern plains.
+                         </p>
+                         <div class="flex gap-8 md:gap-12 border-t border-ed-olive/10 pt-8">
+                             <div>
+                                 <div class="font-display text-xl md:text-2xl text-ed-olive">Black Soil</div>
+                                 <div class="text-[10px] uppercase tracking-widest text-ed-dark/50 mt-1">Mineral Rich</div>
+                             </div>
+                             <div>
+                                 <div class="font-display text-xl md:text-2xl text-ed-olive">Dry Climate</div>
+                                 <div class="text-[10px] uppercase tracking-widest text-ed-dark/50 mt-1">Fungal Resistant</div>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Rich Soil Texture" 
+                                 class="w-full h-48 md:h-64 object-cover rounded-tl-[40px] md:rounded-tl-[80px] grayscale hover:grayscale-0 transition duration-700 bg-gray-200"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('bg-ed-olive')">
+                            
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Wheat Field Landscape" 
+                                 class="w-full h-48 md:h-64 object-cover rounded-br-[40px] md:rounded-br-[80px] grayscale hover:grayscale-0 transition duration-700 mt-8 md:mt-12 bg-gray-200"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('bg-ed-wheat')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Editorial Section -->
+        <section id="health" class="py-16 md:py-32 px-4 md:px-6 lg:px-20 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 md:mb-20">
+                    <h2 class="font-display text-4xl md:text-5xl text-ed-olive mb-6">The Wellness Audit</h2>
+                    <p class="text-ed-dark/60 max-w-2xl mx-auto italic font-display text-lg md:text-xl px-4">
+                        "The modern pantry is filled with dead food. We are bringing life back to your kitchen."
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 relative">
+                    <!-- Vertical Divider Line (Desktop) -->
+                    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-ed-olive/20"></div>
+                    <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-ed-olive/20 rounded-full items-center justify-center font-display text-xs font-bold text-ed-olive z-10">VS</div>
+
+                    <!-- The Problem -->
+                    <div class="md:pr-12 md:text-right">
+                        <h3 class="text-xs font-bold tracking-[0.3em] text-red-800 uppercase mb-4 border-b md:border-none border-red-100 pb-2 md:pb-0">The Factory Standard</h3>
+                        <h4 class="font-display text-2xl md:text-3xl mb-6 text-ed-dark">Packaged Flour</h4>
+                        <div class="space-y-8">
+                            <div>
+                                <p class="font-bold text-ed-olive mb-1">High-Heat Oxidation</p>
+                                <p class="text-sm text-ed-dark/60 leading-relaxed">Industrial milling generates heat that destroys heat-sensitive vitamins and enzymes before the flour is even packed.</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-ed-olive mb-1">Chemical Bleaching</p>
+                                <p class="text-sm text-ed-dark/60 leading-relaxed">Many brands use Benzoyl Peroxide to artificially whiten the flour, stripping its natural amber hue.</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-ed-olive mb-1">Preservative Laden</p>
+                                <p class="text-sm text-ed-dark/60 leading-relaxed">Designed to sit on a shelf for 6 months. Dead food lasts longer; living food nourishes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Solution -->
+                    <div class="md:pl-12 border-t md:border-t-0 border-ed-olive/10 pt-12 md:pt-0">
+                        <h3 class="text-xs font-bold tracking-[0.3em] text-ed-olive uppercase mb-4 border-b md:border-none border-ed-olive/10 pb-2 md:pb-0">The Mehta Standard</h3>
+                        <h4 class="font-display text-2xl md:text-3xl mb-6 text-ed-dark">Whole Living Grain</h4>
+                        <div class="space-y-8">
+                            <div>
+                                <p class="font-bold text-ed-olive mb-1">Optical Cold-Sort</p>
+                                <p class="text-sm text-ed-dark/60 leading-relaxed">We use light, not friction. Our Buhler machines identify impurities without touching or heating the grain.</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-ed-olive mb-1">100% Raw & Natural</p>
+                                <p class="text-sm text-ed-dark/60 leading-relaxed">Zero additives. Zero processing. You get the grain exactly as nature intended it.</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-ed-olive mb-1">Grind Fresh</p>
+                                <p class="text-sm text-ed-dark/60 leading-relaxed">Grinding whole wheat at home retains the germ oil and fiber, essential for heart and gut health.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrolling Marquee -->
+        <div class="bg-ed-olive py-4 md:py-6 overflow-hidden border-y border-ed-bg/10">
+            <div class="flex whitespace-nowrap animate-marquee text-ed-bg/80 font-display text-xl md:text-2xl">
+                <span class="mx-4 md:mx-8">• SOURCED IN BARAN</span>
+                <span class="mx-4 md:mx-8">• OPTICALLY SORTED</span>
+                <span class="mx-4 md:mx-8">• 0% IMPURITIES</span>
+                <span class="mx-4 md:mx-8">• BUHLER TECHNOLOGY</span>
+                <span class="mx-4 md:mx-8">• RAJ-4037 VARIETY</span>
+                <span class="mx-4 md:mx-8">• SOURCED IN BARAN</span>
+                <span class="mx-4 md:mx-8">• OPTICALLY SORTED</span>
+                <span class="mx-4 md:mx-8">• 0% IMPURITIES</span>
+                <span class="mx-4 md:mx-8">• BUHLER TECHNOLOGY</span>
+            </div>
+        </div>
+
+        <!-- Technology Process -->
+        <section class="py-16 md:py-24 px-4 md:px-6 lg:px-20 bg-ed-bg">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16">
+                     <h2 class="font-display text-3xl md:text-4xl text-ed-dark">The Swiss Method.</h2>
+                     <p class="text-xs font-bold tracking-[0.2em] uppercase text-ed-olive mt-4 md:mt-0">Tech Partner: Buhler Group</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-ed-olive/10 border border-ed-olive/10">
+                    <div class="bg-ed-bg p-6 md:p-8 hover:bg-white transition duration-500">
+                        <span class="font-display text-5xl md:text-6xl text-ed-olive/20 mb-4 block">01</span>
+                        <h3 class="font-bold text-ed-dark text-lg mb-2">High-Speed Vision</h3>
+                        <p class="text-sm text-ed-dark/60">Cameras scan thousands of grains per second, analyzing color, shape, and size in real-time.</p>
+                    </div>
+                    <div class="bg-ed-bg p-6 md:p-8 hover:bg-white transition duration-500">
+                        <span class="font-display text-5xl md:text-6xl text-ed-olive/20 mb-4 block">02</span>
+                        <h3 class="font-bold text-ed-dark text-lg mb-2">Air-Jet Ejection</h3>
+                        <p class="text-sm text-ed-dark/60">Precision air nozzles instantly blast away stones, black seeds, and discolored grains.</p>
+                    </div>
+                    <div class="bg-ed-bg p-6 md:p-8 hover:bg-white transition duration-500">
+                        <span class="font-display text-5xl md:text-6xl text-ed-olive/20 mb-4 block">03</span>
+                        <h3 class="font-bold text-ed-dark text-lg mb-2">The Golden Output</h3>
+                        <p class="text-sm text-ed-dark/60">Only the flawless, amber-colored wheat berries make it into the final bag.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Highlight -->
+        <section id="journal" class="py-16 md:py-32 px-4 md:px-6 lg:px-20 bg-ed-olive text-ed-bg">
+            <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 md:gap-16 items-center">
+                <div class="w-full lg:w-1/2">
+                    <div class="border border-ed-bg/20 p-6 md:p-8 relative">
+                        <!-- Corner Accents -->
+                        <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-ed-bg"></div>
+                        <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-ed-bg"></div>
+                        <div class="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-ed-bg"></div>
+                        <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-ed-bg"></div>
+
+                        <span class="text-ed-wheat text-xs font-bold tracking-[0.3em] uppercase block mb-6">Variety Spotlight</span>
+                        <h2 class="font-display text-4xl md:text-5xl mb-6">RAJ 4037</h2>
+                        <p class="text-ed-bg/80 text-lg leading-relaxed font-light mb-8">
+                            A robust variety from the Hadoti plains. Chosen for its heat tolerance and superior protein matrix, resulting in a softer, sweeter roti.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <div class="text-3xl font-display mb-1">12%</div>
+                                <div class="text-xs uppercase tracking-widest text-ed-bg/60">Protein Min.</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-display mb-1">0%</div>
+                                <div class="text-xs uppercase tracking-widest text-ed-bg/60">Impurities</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <!-- Default Online Image (Reliable) -->
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=2000&auto=format&fit=crop" 
+                         alt="Pure Wheat Grain Texture" 
+                         class="w-full h-64 md:h-[500px] object-cover filter sepia-[.1] contrast-125 shadow-2xl bg-ed-olive/50">
+                </div>
+            </div>
+        </section>
+
+        <!-- Gemini AI Feature Section -->
+        <section id="kitchen" class="py-24 px-6 lg:px-20 bg-ed-bg border-b border-ed-olive/10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-ed-olive text-xs font-bold tracking-[0.3em] uppercase block mb-4">Powered by Gemini ✨</span>
+                    <h2 class="font-display text-4xl md:text-5xl text-ed-olive mb-6">The Smart Wheat Kitchen</h2>
+                    <p class="text-ed-dark/70 text-lg font-light max-w-xl mx-auto">
+                        Not sure what to cook? Enter your ingredients or craving below, and our AI Chef will suggest a healthy recipe using <span class="font-bold text-ed-olive">Raj 4037 Whole Wheat</span>.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 border border-ed-olive/20 shadow-xl relative overflow-hidden">
+                    <div class="relative z-10 space-y-6">
+                        <div>
+                            <label for="recipe-input" class="block text-xs font-bold uppercase tracking-widest text-ed-olive mb-2">What's in your pantry?</label>
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <input type="text" id="recipe-input" placeholder="e.g. I have spinach and cheese, suggest a breakfast dish." 
+                                       class="flex-grow bg-ed-bg border-b-2 border-ed-olive/30 p-4 focus:outline-none focus:border-ed-olive transition placeholder-ed-olive/40 font-sans text-ed-dark">
+                                <button onclick="generateRecipe()" id="generate-btn" class="px-8 py-4 bg-ed-olive text-white font-bold uppercase tracking-widest hover:bg-ed-dark transition whitespace-nowrap flex items-center justify-center gap-2">
+                                    <span>Generate Recipe</span>
+                                    <span>✨</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Result Area -->
+                        <div id="recipe-result" class="hidden mt-8 pt-8 border-t border-ed-olive/10">
+                            <div id="loading-spinner" class="hidden flex justify-center py-8">
+                                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-ed-olive"></div>
+                            </div>
+                            <div id="ai-content" class="prose max-w-none text-ed-dark/80 font-light leading-relaxed"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Background Icon -->
+                    <svg class="absolute -right-12 -bottom-12 w-64 h-64 text-ed-olive/5 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Footer -->
+        <section id="contact" class="py-16 md:py-24 px-4 md:px-6 lg:px-20 bg-ed-bg">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="font-display text-3xl md:text-5xl text-ed-olive mb-6">Get In Touch</h2>
+                    <p class="text-ed-dark/70 text-lg font-light max-w-2xl mx-auto">
+                        We are ready to fulfill bulk orders and answer your queries regarding supply chains and retail distribution.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
+                    <!-- Location Card -->
+                    <div class="p-8 border border-ed-olive/10 hover:border-ed-olive/30 transition duration-500 text-center group bg-white md:bg-transparent">
+                        <div class="w-12 h-12 mx-auto bg-ed-olive/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-ed-olive group-hover:text-white transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <div class="text-xs font-bold tracking-[0.2em] uppercase text-ed-olive mb-4">Visit</div>
+                        <p class="font-display text-lg md:text-xl text-ed-dark">RIICO Industrial Area</p>
+                        <p class="text-sm text-ed-dark/60 mt-2">Baran, Rajasthan 325205</p>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="p-8 border border-ed-olive/10 hover:border-ed-olive/30 transition duration-500 text-center group bg-white md:bg-transparent">
+                        <div class="w-12 h-12 mx-auto bg-ed-olive/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-ed-olive group-hover:text-white transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div class="text-xs font-bold tracking-[0.2em] uppercase text-ed-olive mb-4">Email</div>
+                        <a href="mailto:info.mehtaindustries@gmail.com" class="font-display text-lg md:text-xl text-ed-dark hover:text-ed-wheat transition break-all">info.mehtaindustries@gmail.com</a>
+                        <p class="text-sm text-ed-dark/60 mt-2">For citations & orders</p>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="p-8 border border-ed-olive/10 hover:border-ed-olive/30 transition duration-500 text-center group bg-white md:bg-transparent">
+                        <div class="w-12 h-12 mx-auto bg-ed-olive/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-ed-olive group-hover:text-white transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        </div>
+                        <div class="text-xs font-bold tracking-[0.2em] uppercase text-ed-olive mb-4">Call</div>
+                        <a href="tel:+918114480013" class="font-display text-lg md:text-xl text-ed-dark hover:text-ed-wheat transition">+91 81144 80013</a>
+                        <p class="text-sm text-ed-dark/60 mt-2">Mon-Sat, 9am - 6pm</p>
+                    </div>
+                </div>
+
+                <div class="mt-24 pt-8 border-t border-ed-olive/10 flex flex-col md:flex-row justify-between items-center text-[10px] text-ed-olive/40 uppercase tracking-widest text-center md:text-left gap-4 md:gap-0">
+                    <span>© 2024 Mehta Industries</span>
+                    <span>Designed for Purity</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const apiKey = ""; // Will be injected by the environment
+
+        async function generateRecipe() {
+            const input = document.getElementById('recipe-input').value;
+            const resultDiv = document.getElementById('recipe-result');
+            const contentDiv = document.getElementById('ai-content');
+            const loader = document.getElementById('loading-spinner');
+            const btn = document.getElementById('generate-btn');
+
+            if (!input.trim()) return;
+
+            // UI State: Loading
+            resultDiv.classList.remove('hidden');
+            loader.classList.remove('hidden');
+            contentDiv.innerHTML = '';
+            btn.disabled = true;
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            const systemPrompt = "You are a gourmet chef specializing in healthy Indian and international cuisine using premium 'Raj 4037' whole wheat flour from Mehta Industries. Provide a concise, creative recipe based on the user's input. Highlight why the Raj 4037 variety (soft texture, high protein) makes this specific dish better. Format with Markdown.";
+            
+            const userQuery = `Create a recipe using these ingredients/ideas: ${input}`;
+
+            try {
+                // Exponential backoff logic
+                const delays = [1000, 2000, 4000, 8000, 16000];
+                let response;
+                
+                for (let i = 0; i < delays.length; i++) {
+                    try {
+                        response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                contents: [{ parts: [{ text: userQuery }] }],
+                                systemInstruction: { parts: [{ text: systemPrompt }] }
+                            })
+                        });
+                        
+                        if (response.ok) break;
+                        throw new Error(`API Error: ${response.status}`);
+                    } catch (e) {
+                        if (i === delays.length - 1) throw e;
+                        await new Promise(resolve => setTimeout(resolve, delays[i]));
+                    }
+                }
+
+                const data = await response.json();
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a recipe right now.";
+                
+                // Parse Markdown
+                const md = window.markdownit();
+                contentDiv.innerHTML = md.render(text);
+
+            } catch (error) {
+                console.error(error);
+                contentDiv.innerHTML = `<p class="text-red-500">Our Chef is currently busy. Please try again in a moment.</p>`;
+            } finally {
+                loader.classList.add('hidden');
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+    </script>
+</body>
+</html>
